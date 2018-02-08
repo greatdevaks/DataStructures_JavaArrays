@@ -1,5 +1,7 @@
 package arrays.greatdevaks;
 
+import java.util.Random;
+
 public class Arrays {
 
 	public static void main(String[] args) {
@@ -29,6 +31,23 @@ public class Arrays {
 		for(int i = 0; i < mod_arr.length; i++) {
 			System.out.println(mod_arr[i]);
 		}
+		
+		//creating array of objects
+		ArrayOfObjects objAOO[] = new ArrayOfObjects[2];
+		Random rand = new Random();
+		String text[] = {"A", "B", "C", "D", "E"};
+		//setting value for objects
+		for(int i = 0; i < objAOO.length; i++) {
+			objAOO[i] = new ArrayOfObjects(text[rand.nextInt(text.length)], rand.nextInt(50) + 1);
+		}
+		System.out.println("\nArray of Objects:");
+		//getting value of objects
+		for(int i = 0; i < objAOO.length; i++) {
+			System.out.println("Object: " + (i + 1));
+			System.out.println("Name: " + objAOO[i].name);
+			System.out.println("Age: " + objAOO[i].age);
+		}
+		
 	}
 
 }
