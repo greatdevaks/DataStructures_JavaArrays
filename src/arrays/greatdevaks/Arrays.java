@@ -48,12 +48,29 @@ public class Arrays {
 			System.out.println("Age: " + objAOO[i].age);
 		}
 		
-		//multi-dimensional arrays/jagged arrays
+		//multi-dimensional arrays
 		int multi_arr[][] = {{1, 2, 3}, {4, 5, 6}};
 		System.out.println("\nMultidimensional Arrays");
 		for(int i = 0; i < multi_arr.length; i++) {
 			for(int j = 0; j < multi_arr[i].length; j++) {
 				System.out.print(multi_arr[i][j]);
+			}
+			System.out.println();
+		}
+		
+		//jagged arrays
+		int j_arr[][] = new int[2][];
+		j_arr[0] = new int[3];
+		j_arr[1] = new int[2];
+		for(int i = 0; i < j_arr.length; i++) {
+			for(int j = 0; j < j_arr[i].length; j++) {
+				j_arr[i][j] = rand.nextInt(999) + 1;
+			}
+		}
+		System.out.println("\nJagged Arrays:");
+		for(int i = 0; i < j_arr.length; i++) {
+			for(int j = 0; j < j_arr[i].length; j++) {
+				System.out.print(j_arr[i][j]);
 			}
 			System.out.println();
 		}
