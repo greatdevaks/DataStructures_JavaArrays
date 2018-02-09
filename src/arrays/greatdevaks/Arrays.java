@@ -75,6 +75,40 @@ public class Arrays {
 			System.out.println();
 		}
 		
+		//for-each loop
+		System.out.println("\nFor-each loop:");
+		int fe_arr[] = {1, 2, 3};
+		for(int i : fe_arr) {
+			System.out.println(i);
+		}
+		
+		//matrix multiplication
+		int mat_a[][] = {{1, 2, 3}, {4, 5, 6}};
+		int mat_b[][] = {{1, 2}, {1, 1}, {1, 1}};
+		int count_b = 0;
+		for(int i = 0; i < mat_b.length; i++) {
+			for(int j = 0; j < mat_b[i].length; j++) {
+				count_b++;
+			}
+		}		
+		int mul_arr[][] = new int[mat_a.length][count_b / mat_b.length];
+		for(int i = 0; i < mat_a.length; i++) {
+			for(int j = 0; j < count_b / mat_b.length; j++) {
+				mul_arr[i][j] = 0;
+				for(int k = 0; k < mat_b.length; k++) {
+					mul_arr[i][j] = mul_arr[i][j] + (mat_a[i][k] * mat_b[k][j]);
+				}
+			}
+		}
+		System.out.println("\nMatrix Multiplcation:");
+		for(int i = 0; i < mul_arr.length; i++) {
+			for(int j = 0; j < mul_arr[i].length; j++) {
+				System.out.print(mul_arr[i][j] + " ");
+			}
+			System.out.println();
+		}
+		
+		
 	}
 
 }
